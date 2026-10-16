@@ -1,0 +1,25 @@
+# 构建输出
+build/
+out/
+cmake-build-*/
+
+# IDE / 编辑器
+.vs/
+.vscode/
+.idea/
+*.user
+
+# CMake
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+
+# 系统
+Thumbs.db
+.Desktop.ini
+.DS_Store
+
+# 调试/临时
+*.log
+*.tmp
+*.swp

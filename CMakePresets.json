@@ -1,0 +1,38 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "Qt-MinGW",
+      "displayName": "Qt 6.12.0 MinGW (GCC 13.1)",
+      "description": "使用 E:\\Qt 下的 Qt 6.12.0 + MinGW 工具链（Debug）。项目文件夹为纯 ASCII 路径，构建目录在项目内 build/",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_PREFIX_PATH": "E:/Qt/6.12.0/mingw_64",
+        "CMAKE_C_COMPILER": "E:/Qt/Tools/mingw1310_64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "E:/Qt/Tools/mingw1310_64/bin/g++.exe"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Qt-MinGW",
+      "configurePreset": "Qt-MinGW"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "Qt-MinGW",
+      "configurePreset": "Qt-MinGW",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RulesDialog</class>
+ <widget class="QDialog" name="RulesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>整理规则</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <widget class="QWidget" name="rulesTab">
+      <attribute name="title">
+       <string>自定义规则</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="rulesTabLayout">
+       <item>
+        <widget class="QListWidget" name="rulesList"/>
+       </item>
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="nameLabel">
+           <property name="text">
+            <string>规则名称</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="nameEdit"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="typeLabel">
+           <property name="text">
+            <string>匹配方式</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="typeCombo">
+           <item>
+            <property name="text">
+             <string>扩展名</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>文件名通配</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>修改日期（N 天前）</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="patternLabel">
+           <property name="text">
+            <string>匹配内容</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="patternEdit"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="targetLabel">
+           <property name="text">
+            <string>目标目录</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="targetDirEdit"/>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QCheckBox" name="enabledCheck">
+           <property name="text">
+            <string>启用此规则</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="buttonsLayout">
+         <item>
+          <widget class="QPushButton" name="addButton">
+           <property name="text">
+            <string>新增</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="deleteButton">
+           <property name="text">
+            <string>删除</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="moveUpButton">
+           <property name="text">
+            <string>上移</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="moveDownButton">
+           <property name="text">
+            <string>下移</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="buttonsSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="categoriesTab">
+      <attribute name="title">
+       <string>类别映射</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="categoriesTabLayout">
+       <item>
+        <widget class="QTableWidget" name="categoryTable"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="categoriesHint">
+         <property name="text">
+          <string>按内置类别归档时使用的目标目录名（相对桌面），留空则使用默认值。</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>RulesDialog</receiver>
+   <slot>accept()</slot>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>RulesDialog</receiver>
+   <slot>reject()</slot>
+  </connection>
+ </connections>
+</ui>
